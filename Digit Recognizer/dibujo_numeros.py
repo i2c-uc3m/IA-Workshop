@@ -144,7 +144,6 @@ def update():
     # Predecir el número dibujado
     if pyxel.btnp(pyxel.KEY_RETURN) or pyxel.btnp(pyxel.KEY_SPACE):
         prediccion = predict(numero.matriz, mostrar_distancias=False)
-        print("Predición:", prediccion)
 
     # Borrar el número
     if pyxel.btnp(pyxel.KEY_BACKSPACE):
