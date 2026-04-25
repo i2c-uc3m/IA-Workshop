@@ -27,6 +27,8 @@ numeros = []
 numero = None
 prediccion = -1
 
+x, y = None, None
+
 class Numero:
     def __init__(self, label, matriz):
         self.label = label
@@ -122,6 +124,9 @@ def update():
     global numero
     global prediccion
 
+    global x
+    global y
+    
     # index = (pyxel.frame_count / 50) % len(numeros)
     # numero.matriz = numeros[int(index)]["matriz"]
     # prediccion = predict(numero.matriz, mostrar_distancias=False)
@@ -138,8 +143,18 @@ def update():
     if pyxel.btn(pyxel.MOUSE_BUTTON_LEFT):
         # Pintamos de blanco el pixel que estamos pulsando
         # y con tonos grises los adjacentes (si no están ya pintados de blanco)
-        x, y = pyxel.mouse_x, pyxel.mouse_y
-        numero.pintar_pixeles(x, y, gris=0.7, max=1)
+        # Además, interpolamos la posición del ratón desde la última registrada hasta la actual
+        if x and y:
+            prev_x, prev_y = x, y
+            nueva_x, nueva_y = pyxel.mouse_x, pyxel.mouse_y
+            for i in range(100):
+                # USAR VECTORES
+                prev_x += i * nueva_x
+                prev_y += i * nueva_y
+                numero.pintar_pixeles(x, y, gris=1, max=1)
+        else:
+                numero.pintar_pixeles(pyxel.mouse_x, pyxel.mouse_y, gris=1, max=1)
+            
 
     # Predecir el número dibujado
     if pyxel.btnp(pyxel.KEY_RETURN) or pyxel.btnp(pyxel.KEY_SPACE):
