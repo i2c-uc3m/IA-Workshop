@@ -94,7 +94,7 @@ def main():
     global numero
     global numeros
 
-    df = pd.read_csv("vectores_ideales.csv")
+    df = pd.read_csv("Digit Recognizer/vectores_ideales.csv")
     vectores_ideales = []
     for vector in df.values:
         # 'vector' es una columna del dataset de tipo: "['Vector0' 0.0 0.0 ... 0.0 0.0 0.0]"
