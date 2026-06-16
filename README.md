@@ -7,8 +7,9 @@ En las primeras semanas, se trabajará con el conocido dataset de 'California Ho
 ## Digit Classifier
 Más adelante, clasificaremos imágenes de digitos escritos a mano ('MNIST handwritten digits dataset'). En nuestro caso, hemos probado 5 métodos distintos (4 de ellos con algoritmos "no inteligentes"), para clasificar correctamente los dígitos 0-9. Estos métodos se basan en la creación de matrices que representan como es el representante "ideal" o medio de una clase; esto es, haciendo la media de todos los pixeles del set de entrenamiento. Después, según el método, se calcula la diferencia entre la matriz a predecir y cada matriz de números ideales, eligiendo la de menor diferencia como la matriz buscada.
 
-<img alt="Imágen de los números ideales" src="Digit Recognizer/numeros_ideales.png" width="400">
+<img alt="Imágen de los números ideales" src="Digit Recognizer/img/numeros_ideales.png" width="400">
 
 También hemos diseñado un pequeño script que nos sirve para probar el funcionamiento de estos modelos (en concreto, el método 3), importando las matrices de números ideales. Adjuntamos un GIF probando diferentes números dibujados a mano
 
-<img alt="GIF mostrando como el modelo predice correctamente los números" src="Digit Recognizer/Digit Classifier.gif" width="300">
+<img alt="GIF mostrando como el modelo predice correctamente los números" src="Digit Recognizer/img/Digit Classifier.gif" width="300">
+
